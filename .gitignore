@@ -26,3 +26,20 @@
 *.exe
 *.out
 *.app
+
+# Log/err/wrn files
+*.log
+*.wrn
+*.err
+
+# Output and object dirs
+amd64rel
+amd64dbg
+unit_test/x64emudecode32/objfre_win7_amd64/
+unit_test/x64emudecode64/objfre_win7_amd64/
+unit_test/x64emuexec/objfre_win7_amd64/
+x64emu/objfre_win7_amd64/
+unit_test/x64emudecode32/objchk_win7_amd64/
+unit_test/x64emudecode64/objchk_win7_amd64/
+unit_test/x64emuexec/objchk_win7_amd64/
+x64emu/objchk_win7_amd64/
