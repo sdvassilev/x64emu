@@ -5,36 +5,36 @@ as a static library. The emulator was developed as part of a bigger project
 called SuperCell (distributed hypervisor, which unfortunately did not come to
 fruition) and the x64emu main design goals were:
     - Small footprint
-	- Ability to execute in user/kernel/vmx root modes
-	- Implement full-blown decode logic for both 32 and 64 bit modes of 
-	  operation.
-	- Being able to determine if an instruction writes to memory.
-	- Implement emulation logic for instructions that write to memory.
+    - Ability to execute in user/kernel/vmx root modes
+    - Implement full-blown decode logic for both 32 and 64 bit modes of 
+      operation.
+    - Being able to determine if an instruction writes to memory.
+    - Implement emulation logic for instructions that write to memory.
 
 The project produces only x64 binaries. In order to build on Windows:
-	- install WDK 7600 or later
-	- set env variable MSWDK to point to the WDK install path, in my case: 
-	  MSWDK=C:\WinDDK\7600.16385.1
-	- open cmd.exe
-	- execute: "make.bat amd64dbg" or "make.bat amd64rel"
-	- the built library and unit-test binaries will be placed in .\amd64dbg 
-	  or .\amd64rel
+    - install WDK 7600 or later
+    - set env variable MSWDK to point to the WDK install path, in my case: 
+      MSWDK=C:\WinDDK\7600.16385.1
+    - open cmd.exe
+    - execute: "make.bat amd64dbg" or "make.bat amd64rel"
+    - the built library and unit-test binaries will be placed in .\amd64dbg 
+      or .\amd64rel
 A VS2012 solution and projects are available, which essentially use the WDK
 build system.
 
 Three unit tests were developed:
-	- testemudecode32 - tests the decode logic of the emulator against a limited
-	  subset of instructions
-	- testemudecode64 - tests the decode logic of the emulator against one 
-	  million+ pseudo-randomly generated instruction streams and compares the 
-	  results with the output from the windbg debug engine. testemudecode64
-	  can also decode instruction stream provided as command line argument.
-	- testemuexec - tests the instruction emulation logic by comparing the 
-	  state of the emulator after instruction execution against the state of 
-	  the actual CPU after executing the same instruction. An attempt was made
-	  to cover all the possible operands for the supported instructions - total
-	  of 42 million instruction variants are covered.
-	  
+    - testemudecode32 - tests the decode logic of the emulator against a limited
+      subset of instructions
+    - testemudecode64 - tests the decode logic of the emulator against one 
+      million+ pseudo-randomly generated instruction streams and compares the 
+      results with the output from the windbg debug engine. testemudecode64
+      can also decode instruction stream provided as command line argument.
+    - testemuexec - tests the instruction emulation logic by comparing the 
+      state of the emulator after instruction execution against the state of 
+      the actual CPU after executing the same instruction. An attempt was made
+      to cover all the possible operands for the supported instructions - total
+      of 42 million instruction variants are covered.
+      
 So why would one want to use x64emu? As stated in the design goals above, the 
 main advantage of x64emu is that it has minimal footprint, does not depend on 
 any 3rd party libraries and/or header files, and can execute in user, kernel 
