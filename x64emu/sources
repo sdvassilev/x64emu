@@ -1,0 +1,17 @@
+TARGETNAME=x64emu
+TARGETTYPE=DRIVER_LIBRARY
+TARGETLIBS=
+
+MSC_WARNING_LEVEL=/W4 /WX
+
+INCLUDES= .; \
+	..\include;
+
+SOURCES= \
+	x64emu.cpp
+
+RUN_WPP= $(SOURCES) -km	-func:TraceEvents(LEVEL,FLAGS,MSG,...) -gen:{km-WdfDefault.tpl}*.tmh
+
+TARGET_DESTINATION=supercell
+
+ALLOW_DATE_TIME=1

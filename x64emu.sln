@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testemudecode64", "unit_test\x64emudecode64\x64emudecode64.vcxproj", "{0AFE2708-79D7-4821-B10C-87213E4E280C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testemuexec", "unit_test\x64emuexec\x64emuexec.vcxproj", "{B9CAED87-19F9-4190-92FA-32C91773B9A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E8F5023-845D-4801-B8AA-E0019C18029F} = {8E8F5023-845D-4801-B8AA-E0019C18029F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testemudecode32", "unit_test\x64emudecode32\x64emudecode32.vcxproj", "{6019434E-0F33-4875-B320-F29A08C499BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8E8F5023-845D-4801-B8AA-E0019C18029F} = {8E8F5023-845D-4801-B8AA-E0019C18029F}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "x64emu", "x64emu\x64emu.vcxproj", "{8E8F5023-845D-4801-B8AA-E0019C18029F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win64 = Debug|Win64
+		Release|Win64 = Release|Win64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AFE2708-79D7-4821-B10C-87213E4E280C}.Debug|Win64.ActiveCfg = Debug|x64
+		{0AFE2708-79D7-4821-B10C-87213E4E280C}.Debug|Win64.Build.0 = Debug|x64
+		{0AFE2708-79D7-4821-B10C-87213E4E280C}.Release|Win64.ActiveCfg = Release|x64
+		{0AFE2708-79D7-4821-B10C-87213E4E280C}.Release|Win64.Build.0 = Release|x64
+		{B9CAED87-19F9-4190-92FA-32C91773B9A9}.Debug|Win64.ActiveCfg = Debug|x64
+		{B9CAED87-19F9-4190-92FA-32C91773B9A9}.Debug|Win64.Build.0 = Debug|x64
+		{B9CAED87-19F9-4190-92FA-32C91773B9A9}.Release|Win64.ActiveCfg = Release|x64
+		{B9CAED87-19F9-4190-92FA-32C91773B9A9}.Release|Win64.Build.0 = Release|x64
+		{6019434E-0F33-4875-B320-F29A08C499BD}.Debug|Win64.ActiveCfg = Debug|x64
+		{6019434E-0F33-4875-B320-F29A08C499BD}.Debug|Win64.Build.0 = Debug|x64
+		{6019434E-0F33-4875-B320-F29A08C499BD}.Release|Win64.ActiveCfg = Release|x64
+		{6019434E-0F33-4875-B320-F29A08C499BD}.Release|Win64.Build.0 = Release|x64
+		{8E8F5023-845D-4801-B8AA-E0019C18029F}.Debug|Win64.ActiveCfg = Debug|x64
+		{8E8F5023-845D-4801-B8AA-E0019C18029F}.Debug|Win64.Build.0 = Debug|x64
+		{8E8F5023-845D-4801-B8AA-E0019C18029F}.Release|Win64.ActiveCfg = Release|x64
+		{8E8F5023-845D-4801-B8AA-E0019C18029F}.Release|Win64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

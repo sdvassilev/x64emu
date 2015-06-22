@@ -1,0 +1,3 @@
+DIRS = \
+	x64emu \
+	unit_test

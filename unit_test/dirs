@@ -1,0 +1,4 @@
+DIRS = \
+	x64emuexec \
+	x64emudecode64 \
+	x64emudecode32
