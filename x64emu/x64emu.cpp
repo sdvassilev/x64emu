@@ -307,7 +307,8 @@ bool EmuInitEmulatorCtxFromInterruptCtx(
 bool EmuInitEmulatorCtxForDecode(
 	X64_EMULATOR_CTX* pEmu,
 	UINT64		rip,
-	UINT32 instructionStreamLength)
+	UINT32 instructionStreamLength,
+	bool x64)
 {
 	X64_CPU_STATE *cpu = &(pEmu->CpuState);
 	memset(pEmu,0,sizeof(X64_EMULATOR_CTX));
@@ -318,7 +319,7 @@ bool EmuInitEmulatorCtxForDecode(
 	pEmu->SetRegisterValue = NullSetRegisterValue;
 
 	// not mapped.
-	cpu->IA32eX64 = true;
+	cpu->IA32eX64 = x64;
 	cpu->RipGuest.AsInt64 = cpu->RipOrig.AsInt64 = rip;
 	cpu->RipMappedLen = !!instructionStreamLength ? instructionStreamLength : 
 		MAX_INSTRUCTION_LEN;
@@ -369,7 +370,7 @@ inline UINT8 GetRipByte(X64_EMULATOR_CTX* pEmu)
 inline bool AdvanceRip(X64_EMULATOR_CTX* pEmu) 
 {
 	X64_CPU_STATE& cpuState = pEmu->CpuState;
-	if (cpuState.Rip.AsUInt64 == cpuState.RipOrig.AsUInt64 + cpuState.RipMappedLen) {
+	if (cpuState.Rip.AsUInt64 + 1 == cpuState.RipOrig.AsUInt64 + cpuState.RipMappedLen) {
 		// cant advance any further
 		pEmu->DecodeState = DECODE_STATE_ERROR;
 		return false;

@@ -337,7 +337,7 @@ bool DecodeInstrAndCompare(
 
 			NormalizeDbgMnemonic(asmBuffer);
 
-			EmuInitEmulatorCtxForDecode(&emu,g_Rip,8);
+			EmuInitEmulatorCtxForDecode(&emu,g_Rip,8,g_is64bit);
 			emu.CpuState.IA32eX64 = g_is64bit;
 			EmuDecodeInstruction(&emu);
 			if (emu.Instruction.InstructionLen != dbgInstrLen)

@@ -445,7 +445,24 @@ extern "C" {
 		EmuInitEmulatorCtxForDecode(
 		IN OUT X64_EMULATOR_CTX*,
 		IN UINT64 rip,
-		IN OPTIONAL UINT32 instructionStreamLength);
+		IN OPTIONAL UINT32 instructionStreamLength,
+		IN bool x64);
+
+	inline bool
+		EmuInitEmulatorCtxForDecode64(
+		IN OUT X64_EMULATOR_CTX* emu,
+		IN UINT64 rip,
+		IN OPTIONAL UINT32 instructionStreamLength) { 
+		return EmuInitEmulatorCtxForDecode(emu, rip, instructionStreamLength, true);
+	}
+
+	inline bool
+		EmuInitEmulatorCtxForDecode32(
+		IN OUT X64_EMULATOR_CTX* emu,
+		IN UINT64 rip,
+		IN OPTIONAL UINT32 instructionStreamLength) {
+		return EmuInitEmulatorCtxForDecode(emu, rip, instructionStreamLength, false);
+	}
 
 	void
 		EmuCleanupEmulatorCtx(

@@ -1,3 +1,4 @@
 DIRS = \
 	x64emu \
-	unit_test
+	unit_test \
+	sample
